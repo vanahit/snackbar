@@ -1,0 +1,106 @@
+.snackbar-container {
+    width: 365px;
+    max-width: 100%;
+    font-size: 14px;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 999999;
+    visible: hidden;
+}
+
+.bottom-right-in {
+    bottom: 12px;
+    right: 0;
+    animation: snackbar-in .7s;
+}
+
+.bottom-right-out {
+    right: -20px;
+    animation: snackbar-out .7s;
+}
+
+.text-ellipsis {
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.snackbar {
+    background: #fff;
+    position: relative;
+    pointer-events: auto;
+    overflow: hidden;
+    margin: 6px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px #999;
+    opacity: .7;
+    color: #fff;
+    padding: 15px 15px 10px 10px;
+}
+
+.snackbar:hover {
+    box-shadow: 0 0 12px #fff;
+    opacity: 1;
+    cursor: pointer
+}
+
+.snackbar-title {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+/*.snackbar-message {*/
+/*    */
+/*}*/
+
+.snackbar-image {
+    float: left;
+    margin-right: 15px;
+}
+
+.snackbar-image img {
+    width: 30px;
+    height: 30px;
+}
+
+.snackbar button {
+    position: relative;
+    right: -.3em;
+    top: -.3em;
+    float: right;
+    font-weight: 700;
+    color: #fff;
+    outline: none;
+    border: none;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .8;
+    line-height: 1;
+    font-size: 16px;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 0
+}
+
+
+@keyframes snackbar-in {
+    from {
+        transform: translateX(100%)
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes snackbar-out {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%)
+    }
+}
+
