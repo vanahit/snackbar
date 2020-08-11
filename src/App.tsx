@@ -18,7 +18,7 @@ function App() {
                     id: Date.now(),
                     title: 'First SnackBar',
                     description: 'This is a snackBar',
-                    backgroundColor: 'red',
+                    type: 'info'
                 })}
             > Show Tost
             </button>

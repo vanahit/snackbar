@@ -38,7 +38,20 @@
     color: #fff;
     padding: 15px 15px 10px 10px;
 }
+.snackbar-success {
+    background: #4caf50;
+}
+.snackbar-error {
+    background: #f44336;
+}
 
+.snackbar-warning {
+    background: #ff9800;
+}
+
+.snackbar-info {
+    background: #2196f3;
+}
 .snackbar:hover {
     box-shadow: 0 0 12px #fff;
     opacity: 1;
@@ -46,24 +59,23 @@
 }
 
 .snackbar-title {
+    display: flex;
+    align-items: center;
     font-weight: 700;
     font-size: 16px;
-    margin-bottom: 6px;
 }
 
-/*.snackbar-message {*/
-/*    */
-/*}*/
+.snackbar-message {
+    font-size: 12px;
+}
 
 .snackbar-image {
     float: left;
-    margin-right: 15px;
-}
-
-.snackbar-image img {
     width: 30px;
     height: 30px;
+    margin: 0 15px;
 }
+
 
 .snackbar button {
     position: relative;
