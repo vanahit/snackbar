@@ -5,14 +5,13 @@ import successIcon from "./assets/svg/tick.svg";
 import warningIcon from "./assets/svg/warning.svg";
 
 type SnackBarProps = {
-    id: number,
     item: SnackBar
     deleteSnackBar: ((idx: number) => void),
     position: string,
     duration: number
 }
 
-const SnackBarComponent: FC<SnackBarProps> = ({id, item, deleteSnackBar, position, duration,}) => {
+const SnackBarComponent: FC<SnackBarProps> = ({item, deleteSnackBar, position, duration,}) => {
     const [open, setOpen] = useState(true);
     useEffect(() => {
         const setTimeoutId = setTimeout(() => {
@@ -25,26 +24,23 @@ const SnackBarComponent: FC<SnackBarProps> = ({id, item, deleteSnackBar, positio
     }, []);
     return (
         <div
-            className={`snackbar snackbar-${item.type} ${position}-in ${!open && `${position}-out`}`}
-            onAnimationEnd={(e) => !open && deleteSnackBar(id)}
+            className={`snackbar snackbar__${item.type} ${position} ${position}-${!open ? 'out' : 'in'}`}
+            onAnimationEnd={(e) => !open && deleteSnackBar(item.id)}
         >
             <button onClick={() => setOpen(false)}>
                 X
             </button>
-
-            <div className="snackbar-title ">
-                <img className="snackbar-image" src={item.type === "success" ? successIcon : warningIcon} alt="icon"/>
+            <div className="snackbar_title ">
+                <img className="snackbar_image" src={item.type === "success" ? successIcon : warningIcon} alt="icon"/>
                 <div>
-                    <p className="text-ellipsis">{item.title}</p>
-                    <p className="snackbar-message text-ellipsis">{item.description}
-                    </p>
+                    <div className="text-ellipsis"> {item.title} </div>
+                    <div className="snackbar_message text-ellipsis"> {item.description} </div>
                 </div>
             </div>
 
         </div>
 
-    )
-        ;
+    );
 }
 
 export default SnackBarComponent;

@@ -5,22 +5,22 @@ import SnackBarComponent from "./SnackBar";
 
 
 type SnackBarContainerProps = {
-    snackBarlist: SnackBar[],
+    snackBarList: SnackBar[],
     setList: ((p: SnackBar[]) => void),
     position: string,
     duration: number
 }
 
-const SnackBarContainer: FC<SnackBarContainerProps> = ({snackBarlist, setList, position, duration,}) => {
+const SnackBarContainer: FC<SnackBarContainerProps> = ({snackBarList, setList, position, duration,}) => {
     const deleteSnackBar = (id: number): void => {
-        let newList = snackBarlist.filter(item => item.id !== id);
+        let newList = snackBarList.filter(item => item.id !== id);
         setList(newList);
     }
     return (
-        <div className={`snackbar-container ${position}-in`}>
+        <div className={`snackbar_container ${position}-in`}>
             {
-                snackBarlist.map((item: SnackBar, i: number) =>
-                    <SnackBarComponent key={item.id} id={item.id} item={item} deleteSnackBar={deleteSnackBar}
+                snackBarList.map((item: SnackBar, i: number) =>
+                    <SnackBarComponent key={item.id} item={item} deleteSnackBar={deleteSnackBar}
                                        position={position}
                                        duration={duration}/>
                 )

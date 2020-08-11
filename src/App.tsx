@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import {SnackBar} from "./types";
 import SnackBarContainer from "./SnackBarContainer";
+import {createCSSClass} from "./utils";
 
 function App() {
     const [list, setList] = useState<SnackBar[]>([]);
@@ -10,7 +11,7 @@ function App() {
             setList(p => [...p, {id: Date.now(), ...item}])
         }
     }
-
+    console.log(createCSSClass(["class1", "class2", "class3"], {"class4": false, "class5": true}));
     return (
         <div className="App">
             <button
@@ -18,13 +19,13 @@ function App() {
                     id: Date.now(),
                     title: 'First SnackBar',
                     description: 'This is a snackBar',
-                    type: 'info'
+                    type: 'success'
                 })}
             > Show Tost
             </button>
 
             <SnackBarContainer
-                snackBarlist={list}
+                snackBarList={list}
                 setList={setList}
                 position={'bottom-right'}
                 duration={5000}

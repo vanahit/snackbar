@@ -1,4 +1,4 @@
-.snackbar-container {
+.snackbar_container {
     width: 365px;
     max-width: 100%;
     font-size: 14px;
@@ -7,9 +7,10 @@
     z-index: 999999;
     visible: hidden;
 }
-
-.bottom-right-in {
+.bottom {
     bottom: 12px;
+}
+.bottom-right-in {
     right: 0;
     animation: snackbar-in .7s;
 }
@@ -38,18 +39,14 @@
     color: #fff;
     padding: 15px 15px 10px 10px;
 }
-.snackbar-success {
+.snackbar__success {
     background: #4caf50;
 }
-.snackbar-error {
+.snackbar__error {
     background: #f44336;
 }
 
-.snackbar-warning {
-    background: #ff9800;
-}
-
-.snackbar-info {
+.snackbar__info {
     background: #2196f3;
 }
 .snackbar:hover {
@@ -58,18 +55,18 @@
     cursor: pointer
 }
 
-.snackbar-title {
+.snackbar_title {
     display: flex;
     align-items: center;
     font-weight: 700;
     font-size: 16px;
 }
 
-.snackbar-message {
+.snackbar_message {
     font-size: 12px;
 }
 
-.snackbar-image {
+.snackbar_image {
     float: left;
     width: 30px;
     height: 30px;
